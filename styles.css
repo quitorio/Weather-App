@@ -1,0 +1,184 @@
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Minimalist sans-serif font */
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    animation: fadeIn 1s ease-in-out;
+    text-transform: capitalize;
+    flex-direction: column; /* Ensure elements stack vertically */
+    text-align: center; /* Center text within elements */
+    button {
+        width: auto; /* Fit button width to the text */
+    }
+    input[type="text"] {
+        width: 230px; /* Increase width of the textbox */
+        padding: 5px; /* Add padding inside the textbox */
+        border-radius: 10px; /* Rounded corners for the textbox */
+
+    }
+}
+
+button {
+    background-color: orange;
+    color: #fff; /* White text color */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    &:active {
+        transform: scale(0.95);
+        background-color: orangered;
+    }
+}
+
+button:hover {
+    background-color: darkorange;
+    transform: scale(1.1);
+}
+
+h1 {
+    margin-bottom: 20px; /* Add space below the h1 */
+    animation: titleAnimation 1s ease-in-out; /* Apply title animation */
+    position: absolute;
+    top: 250px; /* Reduced top value to position closer to body */
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 10px;
+    font-size: 60px;
+    color: orange;
+    text-shadow: 2px 2px 4px black;
+    white-space: nowrap;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+}
+
+.weather-container {
+    background-color: #1e1e1e; /* Dark container background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Darker shadow */
+    text-align: center;
+    animation: slideUp 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto; /* Center the container */
+}
+
+.weather-info {
+    margin-top: 20px;
+    text-transform: capitalize;
+}
+
+#city {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#temperature, #description {
+    font-size: 18px;
+}
+
+input[type="text"] {
+    font-size: 20px;
+    background-color: #333; /* Dark input background */
+    color: #e0e0e0; /* Light input text color */
+    border: 1px solid #444; /* Dark input border */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes titleAnimation {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        padding: 20px;
+        align-items: center; /* Center items horizontally */
+    }
+
+    .weather-container {
+        width: 100%;
+        padding: 10px;
+        margin: auto; /* Center the container */
+    }
+
+    input[type="text"] {
+        width: 100%;
+        font-size: 18px;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    #city {
+        font-size: 20px;
+    }
+
+    #temperature, #description {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        align-items: center; /* Center items horizontally */
+    }
+
+    .weather-container {
+        padding: 5px;
+        margin: auto; /* Center the container */
+    }
+
+    input[type="text"] {
+        font-size: 16px;
+    }
+
+    button {
+        font-size: 12px;
+    }
+
+    #city {
+        font-size: 18px;
+    }
+
+    #temperature, #description {
+        font-size: 14px;
+    }
+}
